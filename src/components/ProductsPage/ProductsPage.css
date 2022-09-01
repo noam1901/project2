@@ -1,0 +1,56 @@
+.sortbar {
+    display: flex;
+    background-color: gray;
+    flex-wrap: wrap;
+
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.sortbar-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.categories {
+    display: flex;
+}
+.categories-container {
+    padding: 0.2rem;
+    margin: 0.4rem;
+}
+.categories-container div {
+    margin: 0.2rem;
+    font-size: large;
+    font-weight: 600;
+}
+.prices {
+    display: flex;
+    margin: 2rem;
+    text-align: center;
+}
+.prices-container {
+    padding: 0.2rem;
+    margin: 0.4rem;
+}
+.prices-container div {
+    margin: 0.2rem;
+    font-size: large;
+    font-weight: 600;
+}
+.prices-container div input{
+    width: 50px;
+}
+.sort-button {
+    color: white;
+    background-color: black;
+    padding: 10px;
+    border-radius: 20px;
+    height: 5rem;
+    margin: 0.5rem;
+    margin-top: 1.5rem;
+    cursor: pointer;
+}
+.sort-button:hover {
+    background-color: white;
+    color: black;
+}
