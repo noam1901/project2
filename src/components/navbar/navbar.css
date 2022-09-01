@@ -1,0 +1,26 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+    width: 100vw;
+    overflow: hidden;
+  }
+  .nav-links{
+    display: flex;
+    padding: 0;
+  }
+  .nav-links li{
+    margin: 0.8rem;
+    cursor: pointer;
+    list-style-type: none;
+  }
+  .nav-links li:hover {
+    color: gray;
+  }
+  .logo {
+    height: 4rem;
+    border-radius: 20px;
+  }
+  
