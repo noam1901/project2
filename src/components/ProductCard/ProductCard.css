@@ -1,12 +1,16 @@
 .card {
     border: 2px black solid;
     border-radius: 20px;
-    max-height: 30rem;
+    max-height: 20rem;
     width: 20rem;
-    margin: 0.6rem;
+    margin: 0.2rem;
+    text-align: center;
   }
   .card-img {
-    width: 90%;
+    width: 50%;
     padding-top: 0.5rem;
     border-radius: 20px;
+  }
+  .buttons {
+    padding: 3px;
   }
