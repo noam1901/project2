@@ -11,12 +11,12 @@
     display: flex;
     padding: 0;
   }
-  .nav-links li{
+  .nav-links a{
     margin: 0.8rem;
     cursor: pointer;
-    list-style-type: none;
+    color: white;
   }
-  .nav-links li:hover {
+  .nav-links a:hover {
     color: gray;
   }
   .logo {
