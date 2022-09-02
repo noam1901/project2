@@ -8,6 +8,8 @@ import Cart from './components/Cart/Cart';
 import MyAccount from './components/MyAccount/MyAccount';
 import MyDetails from './components/MyAccount/MyDetails/MyDetails';
 import UpdateName from './components/MyAccount/UpdateName/UpdateName';
+import Address from './components/MyAccount/Address/Address';
+import ChangePassword from './components/MyAccount/ChangePassword/ChangePassword';
 
 
 function App() {
@@ -22,6 +24,8 @@ function App() {
         <Route path='/profile' element={<MyAccount></MyAccount>}>
           <Route path='' element={<MyDetails></MyDetails>}/>
           <Route path='update' element={<UpdateName></UpdateName>}/>
+          <Route path='address' element={<Address></Address>}/>
+          <Route path='password' element={<ChangePassword></ChangePassword>}/>
         </Route>
       </Routes>
       
