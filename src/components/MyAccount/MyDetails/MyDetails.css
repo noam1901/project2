@@ -1,0 +1,24 @@
+.my-details-container {
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.my-details-card {
+    max-width: 60vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+.my-details-card div {
+    display: flex;
+    align-items: center;
+    width: 60%;
+}
+.my-details-card div span{
+    font-weight: 500;
+    padding-left: 1rem;
+}
+.my-details-card div h2 {
+    width: 60%;
+}

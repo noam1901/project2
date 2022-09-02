@@ -1,0 +1,22 @@
+.update-name-container {
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.update-name-card {
+    max-width: 60vh;
+    display: flex;
+
+    flex-wrap: wrap;
+
+}
+.update-name-card div {
+    display: flex;
+    align-items: center;
+    width: 60%;
+}
+.update-name-card div h2 {
+    width: 60%;
+}
