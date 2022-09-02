@@ -1,0 +1,24 @@
+.address-container {
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.address-card {
+    max-width: 60vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+.address-card div {
+    display: flex;
+    align-items: center;
+    width: 60%;
+}
+.address-card div span{
+    font-weight: 500;
+    padding-left: 1rem;
+}
+.address-card div h2 {
+    width: 60%;
+}

@@ -9,7 +9,7 @@ const MyAccount = () => {
           <div className='my-account-options'>
             <Link to="/profile/">My details</Link>
             <Link to="/profile/update">Update Name</Link>
-            <Link to="/profile/address">My addresses</Link>
+            <Link to="/profile/address">My address</Link>
             <Link to="/profile/password">Change password</Link>
             <Link to="/profile/orders">My Orders</Link>
             <Link to="/profile/wishlist">My Wishlist</Link>
