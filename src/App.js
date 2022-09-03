@@ -10,6 +10,7 @@ import MyDetails from './components/MyAccount/MyDetails/MyDetails';
 import UpdateName from './components/MyAccount/UpdateName/UpdateName';
 import Address from './components/MyAccount/Address/Address';
 import ChangePassword from './components/MyAccount/ChangePassword/ChangePassword';
+import MyOrders from './components/MyAccount/MyOrders/MyOrders';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route path='update' element={<UpdateName></UpdateName>}/>
           <Route path='address' element={<Address></Address>}/>
           <Route path='password' element={<ChangePassword></ChangePassword>}/>
+          <Route path='orders' element={<MyOrders></MyOrders>}/>
         </Route>
       </Routes>
       
