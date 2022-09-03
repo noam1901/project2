@@ -1,0 +1,28 @@
+.wishlist-product {
+    border: 2px black solid;
+    max-width: 50vh;
+    width: 90%;
+    padding: 1rem; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.wishlist-product-img {
+    width: 5rem;
+}
+.wishlist-buttons {
+    display: flex;
+    flex-direction: column;
+}
+.remove-wishlist {
+    background-color: red;
+    padding: 0.5rem;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.remove-wishlist:hover {
+    background-color: white;
+    color: red;
+}
