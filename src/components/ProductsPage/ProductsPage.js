@@ -23,7 +23,7 @@ const ProductsPage = () => {
             </div>
         </div> 
         <div className='sort-button'>
-          <h1>Sort now</h1>
+          <div>Sort now</div>
         </div>
         
       </div>
