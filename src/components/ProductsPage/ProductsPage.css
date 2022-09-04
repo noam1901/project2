@@ -1,8 +1,7 @@
 .sortbar {
     display: flex;
-    background-color: gray;
+    justify-content: center;
     flex-wrap: wrap;
-
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }

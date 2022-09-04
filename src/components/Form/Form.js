@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import Input from "./Input/Input";
 
 function Form(props){
     const [formInputs, setFormInputs] = useState(props.formInputs)
@@ -45,7 +45,7 @@ function Form(props){
     return(
         <form className="login-form">
           <h2>{props.title}</h2>
-        {Object.keys(formInputs).map(input=> <input
+        {Object.keys(formInputs).map(input=> <Input
             key={formInputs[input].id}
             onBlur={validate}
             {...formInputs[input]}
