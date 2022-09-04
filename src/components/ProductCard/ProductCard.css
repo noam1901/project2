@@ -2,9 +2,15 @@
     border: 2px black solid;
     border-radius: 20px;
     max-height: 20rem;
-    width: 20rem;
-    margin: 0.2rem;
+    width: 17rem;
+    margin: 2.5rem;
     text-align: center;
+    
+  }
+  @media (max-width: 712px){
+    .card {
+      margin: 0.2rem;
+    }
   }
   .card-img {
     width: 50%;
