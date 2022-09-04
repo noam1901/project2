@@ -1,4 +1,5 @@
 import React from 'react'
+import Form from '../Form/Form'
 import './Cart.css'
 import CartCard from './CartCard/CartCard'
 const Cart = () => {
@@ -13,6 +14,7 @@ const Cart = () => {
             <div>Total Price: 18$</div>
           </div>
           <button>Clear Cart</button>
+          <Form></Form>
           <div className='checkout'>
             <div className='checkout-button'>Checkout</div>
           </div>
