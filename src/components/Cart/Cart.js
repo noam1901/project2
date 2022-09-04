@@ -12,6 +12,7 @@ const Cart = () => {
             <div>Total Products: 2</div>
             <div>Total Price: 18$</div>
           </div>
+          <button>Clear Cart</button>
           <div className='checkout'>
             <div className='checkout-button'>Checkout</div>
           </div>

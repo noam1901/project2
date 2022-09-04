@@ -1,6 +1,7 @@
 .cart-card {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     border: 2px black solid;
     width: 100%;
 }
