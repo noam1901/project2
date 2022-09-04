@@ -12,6 +12,8 @@ import Address from './components/MyAccount/Address/Address';
 import ChangePassword from './components/MyAccount/ChangePassword/ChangePassword';
 import MyOrders from './components/MyAccount/MyOrders/MyOrders';
 import Wishlist from './components/MyAccount/Wishlist/Wishlist';
+import Login  from './components/Login/Login';
+import Register from './components/Register/Register';
 
 
 function App() {
@@ -29,8 +31,10 @@ function App() {
           <Route path='address' element={<Address></Address>}/>
           <Route path='password' element={<ChangePassword></ChangePassword>}/>
           <Route path='orders' element={<MyOrders></MyOrders>}/>
-          <Route path='wishlist' element={<Wishlist></Wishlist>}/>
+          <Route path='wishlist' element={<Wishlist></Wishlist>}/> 
         </Route>
+        <Route path='Login' element={<Login></Login>}/>
+        <Route path='register' element={<Register></Register>}/>
       </Routes>
       
     </div>
