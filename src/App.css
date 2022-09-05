@@ -5,3 +5,15 @@
 * {
   font-family: 'Raleway', sans-serif;
 }
+.wishlist-button {
+  background-color: red;
+
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.wishlist-button:hover {
+  background-color: white;
+  color: red;
+}

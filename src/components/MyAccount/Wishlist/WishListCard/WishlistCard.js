@@ -9,7 +9,7 @@ const WishlistCard = () => {
             <button>add to cart</button>
             <button>Buy Now</button>
         </div>
-        <div className='remove-wishlist'>Remove from wishlist</div>
+        <button className='wishlist-button'>Remove from wishlist</button>
     </div>
   )
 }
