@@ -8,7 +8,7 @@ function Input(props){
                 <p className='icon'>
                     <props.icon></props.icon>
                 </p>
-                <input name={props.name} type={props.type} defaultValue={props.value} placeholder={props.placeholder} onBlur={(e)=>props.onBlur(e.target.name, e.target.value)}></input>
+                <input name={props.name} type={props.type} defaultValue={props.value} placeholder={props.placeholder} onChange={(e)=>props.onBlur(e.target.name, e.target.value)}></input>
             </div>:
             <div className="input-container">
                 <p className='icon'>
