@@ -1,14 +1,15 @@
-
+import './Input.css'
 function Input(props){
     return (
         <div className="single-input">
             <label>{props.label}</label><br></br>
-            {!(props.type === 'select')?<div className="input-container">
+            {!(props.type === 'select')?
+            <div className="input-container">
                 <p className='icon'>
                     <props.icon></props.icon>
                 </p>
-                    <input name={props.name} type={props.type} defaultValue={props.value} placeholder={props.placeholder} onBlur={(e)=>props.onBlur(e.target.name, e.target.value)}></input>
-                </div>:
+                <input name={props.name} type={props.type} defaultValue={props.value} placeholder={props.placeholder} onBlur={(e)=>props.onBlur(e.target.name, e.target.value)}></input>
+            </div>:
             <div className="input-container">
                 <p className='icon'>
                     <props.icon></props.icon>

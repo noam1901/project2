@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Input from "./Input/Input";
-
 function Form(props){
     const [formInputs, setFormInputs] = useState(props.formInputs)
     const validate = (name, value)=>{
@@ -29,7 +28,7 @@ function Form(props){
         }
         setFormInputs({...formInputs})
       }
-      const sumbitButton = (e)=>{
+      const sumbitButton =  async(e)=>{
         e.preventDefault()
         let isValid = true
         for(let input in formInputs){
@@ -39,11 +38,18 @@ function Form(props){
             }
         }
         if(isValid){
-            alert('welcome')
+          const values = {}       
+          for(let val in formInputs){
+            values[formInputs[val].name] = formInputs[val].value
+          }
+          const res = await props.req(values)
+          if(res){
+            window.location.href = 'http://localhost:3000/'
+          }
         }
       }
     return(
-        <form className="login-form">
+        <form className="form">
           <h2>{props.title}</h2>
         {Object.keys(formInputs).map(input=> <Input
             key={formInputs[input].id}
