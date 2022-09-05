@@ -15,7 +15,7 @@ function ProductCard() {
       <div className='buttons'>
         <button> Buy Now</button>
         <button> Add To Cart</button>
-        <button> Add To Wishlist</button>
+        <button className='wishlist-button'> Add To Wishlist</button>
       </div>
     </div>
   )

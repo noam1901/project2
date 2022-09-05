@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './navbar.css' 
 import { Link } from 'react-router-dom';
+import Dropdown from 'react-bootstrap/Dropdown';
 function Navbar() {
   const [loged, setLoged] = useState(false)
   useEffect(
@@ -23,13 +24,22 @@ function Navbar() {
             <Link to='/products'>Products</Link>
           </ul>
         </div>
-        <div>
-          <img src='./LOGO.png' className='logo'></img>
-        </div>
         <div className='left-nav'>
-          <ul className="nav-links">
-            {loged?<><Link to='/cart'>Cart</Link><Link to='/profile'>My Account</Link><Link to='/' onClick={removeCookie}>Log Out</Link></>:<><Link to='/login'>Login</Link><Link to='/register'>Register</Link></>}  
-          </ul>
+        <Dropdown>
+      <Dropdown.Toggle variant="dark" id="dropdown-basic">
+        
+      </Dropdown.Toggle>
+
+      <Dropdown.Menu>
+        {loged?<><Dropdown.Item as={Link} to="/cart">Cart</Dropdown.Item>
+        <Dropdown.Item as={Link} to="/profile">My Account</Dropdown.Item>
+        <Dropdown.Item as={Link} to="/" onClick={removeCookie}>Log Out</Dropdown.Item></>:<><Dropdown.Item as={Link} to='/login'>Login</Dropdown.Item><Dropdown.Item as={Link} to='/register'>Register</Dropdown.Item></>}
+      </Dropdown.Menu>
+    </Dropdown>
+        
+            
+            
+          
         </div>
       </div>
   )

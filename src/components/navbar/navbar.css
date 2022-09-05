@@ -5,7 +5,6 @@
     background-color: black;
     color: white;
     width: 100vw;
-    overflow: hidden;
   }
   .nav-links{
     display: flex;
@@ -28,4 +27,18 @@
       display: none;
     }
   }
-  
+  .nav-links-right {
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    border-bottom-left-radius: 20px;
+  }
+  .nav-links-right a{
+    color: white;
+    margin: 1rem
+  }
+  .dropdown-item {
+    background-color: black;
+    color: white;
+  }
