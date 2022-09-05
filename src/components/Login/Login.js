@@ -2,6 +2,8 @@ import React from 'react'
 import Form from '../Form/Form'
 import './Login.css'
 import {FaMailBulk, FaPaperclip} from 'react-icons/fa'
+import { Link } from 'react-router-dom'
+import Api from '../../DAL/api'
 const Login = () => {
     const formInputs = {
         email: {
@@ -34,7 +36,12 @@ const Login = () => {
     }
   return (
     <div className='login-page-container'>
-        <Form formInputs={formInputs} title="Login" onSubmit="Login"></Form>
+        <Form formInputs={formInputs} title="Login" onSubmit="Login" req={Api.loginPost}></Form>
+        <div>
+          <br></br>
+          <span>dont have a user?</span><br></br>
+          <Link to='/register'>Register here</Link>
+        </div>
     </div>
   )
 }

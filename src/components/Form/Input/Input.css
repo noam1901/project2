@@ -1,0 +1,11 @@
+.input-container {
+    display: flex;
+    background-color: gray;
+    padding: 0.4rem;
+}
+.icon {
+    padding-right: 0.4rem;
+}
+.input-error {
+    color: red;
+}
