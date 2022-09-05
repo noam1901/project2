@@ -21,7 +21,6 @@ function Form(props){
           }
         }
         if(formInputs[name].validations.confirm_password){
-            console.log(formInputs[name].value, formInputs['password'].value);
             if(formInputs[name].value !== formInputs['password'].value){
                 formInputs[name].errors.push({name:'passwordConfirm', value: `${name} Not Same`})
             }
@@ -45,6 +44,8 @@ function Form(props){
           const res = await props.req(values)
           if(res){
             window.location.href = 'http://localhost:3000/'
+          }else {
+            alert(props.error)
           }
         }
       }

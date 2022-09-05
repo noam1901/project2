@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import {FaMailBulk, FaPaperclip, FaMarsDouble, FaPuzzlePiece} from 'react-icons/fa'
 import Form from '../Form/Form'
+import Api from '../../DAL/api'
 
 function Register(){
     const formInputs= {firstName: {
@@ -87,7 +88,7 @@ function Register(){
     }
     return(
         <div className="login-page-container">
-        <Form formInputs={formInputs} title='sign up' onSubmit='Register'></Form>
+        <Form formInputs={formInputs} title='sign up' onSubmit='Register' error="email already in use" req={Api.registerPost}></Form>
         <div>
           <br></br>
           <span>Already have a user?</span><br></br>

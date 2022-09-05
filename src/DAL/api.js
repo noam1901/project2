@@ -14,4 +14,21 @@ export default class Api {
         const data = await response.json()
         return data
     }
+    static async registerPost(values){
+        delete values.confirm_password
+        const response = await fetch('http://localhost:3001/api/users/register',{
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            credentials: 'include',
+            body: JSON.stringify({
+                ...values,
+                address: "",
+                country: "",
+                postalCode: "",
+                phone: ""
+            })
+        })
+        const data = await response.json()
+        return data
+    }
 }
