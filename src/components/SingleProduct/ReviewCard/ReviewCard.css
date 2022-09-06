@@ -1,0 +1,9 @@
+.review-card{
+    border: black solid 2px;
+    width: 40vh;
+}
+@media(max-width:375px){
+    .review-card {
+        width: 30vh;
+    }
+}

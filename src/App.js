@@ -14,6 +14,7 @@ import MyOrders from './components/MyAccount/MyOrders/MyOrders';
 import Wishlist from './components/MyAccount/Wishlist/Wishlist';
 import Login  from './components/Login/Login';
 import Register from './components/Register/Register';
+import SingleProduct from './components/SingleProduct/SingleProduct';
 
 
 function App() {
@@ -22,8 +23,9 @@ function App() {
     <div className="App">
       <Navbar></Navbar>
       <Routes>
+        <Route path='product/:id' element={<SingleProduct></SingleProduct>}/>
         <Route path='/' element={<HomePage></HomePage>} />
-        <Route path='/products' element={<ProductsPage></ProductsPage>} />
+        <Route path='/products' element={<ProductsPage></ProductsPage>}/>
         <Route path='/cart' element={<Cart></Cart>} />
         <Route path='/profile' element={<MyAccount></MyAccount>}>
           <Route path='' element={<MyDetails></MyDetails>}/>
