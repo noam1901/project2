@@ -1,14 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './ProductCard.css'
 function ProductCard() {
   return (
-    <div className='card'>
-      <div> 
-        <img src="./LOGO.png" className='card-img'></img>
-      </div>
-      <div>
-        <h2>Product Title</h2>
-      </div>
+    <div className='product-card'>
+        <div> 
+          <img src="./LOGO.png" className='card-img'></img>
+        </div>
+        <div>
+          <h2>Product Title</h2>
+        </div>
       <div>
         <h4>lorem ipsum</h4>
       </div>

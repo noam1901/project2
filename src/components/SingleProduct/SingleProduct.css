@@ -1,0 +1,26 @@
+.single-product-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.gallery-container{
+    max-width: 50vh;
+}
+
+.price-rating{
+    display: flex;
+    justify-content: space-between;
+}
+.reviews-container {
+    display: flex;
+}
+.make-review {
+    display: flex;
+    flex-direction: column;
+}
+.btns-group {
+    display: flex;
+    justify-content: space-between;
+}
