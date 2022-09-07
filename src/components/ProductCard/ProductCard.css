@@ -3,6 +3,7 @@
     margin: 2.5rem;
     text-align: center;
     padding: 0.2rem;
+    box-shadow: 1px 3px 10px 1px;
   }
   @media (max-width: 712px){
     .product-card {
@@ -13,7 +14,23 @@
     width: 50%;
     padding-top: 0.5rem;
     border-radius: 20px;
+    height: 140.9px;
   }
   .buttons {
     padding: 3px;
+  }
+  .product-card-title {
+    font-size: larger;
+    text-decoration: none;
+    color: black;
+  }
+  .product-card-title-container{
+    height: 52px;
+  }
+  .product-card-title:hover {
+    color: gray;
+  }
+  .product-card-price {
+    display: flex;
+    justify-content: space-between;
   }

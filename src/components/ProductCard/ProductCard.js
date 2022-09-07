@@ -1,21 +1,24 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './ProductCard.css'
-function ProductCard() {
+function ProductCard(props) {
   return (
     <div className='product-card'>
         <div> 
-          <img src="./LOGO.png" className='card-img'></img>
+          <Link to={`${props.id}`}>
+            <img src={`imgs/${props.img}.jpg`} className='card-img'></img>
+          </Link>
         </div>
-        <div>
-          <h2>Product Title</h2>
+        <div className='product-card-title-container'>
+          <Link to={`${props.id}`} className="product-card-title">{props.name}</Link>
         </div>
-      <div>
-        <h4>lorem ipsum</h4>
+      <div className='product-card-price'>
+        <h4>{props.price}$</h4>
+        <h4>{+props.rating}⭐</h4>
       </div>
       <div className='buttons'>
-        <button> Buy Now</button>
-        <button> Add To Cart</button>
+        {props.instock !== 0?<>
+        <button> Add To Cart</button></>:<button disabled> Out of stock</button>}
         <button className='wishlist-button'> Add To Wishlist</button>
       </div>
     </div>
