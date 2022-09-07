@@ -1,7 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './Cart.css'
 import CartCard from './CartCard/CartCard'
+
 const Cart = () => {
+  const navigate = useNavigate()
+  useEffect(()=>{
+    const cookie = document.cookie.split('=')
+    if(!cookie[1]){
+      navigate('/')
+      return
+    }
+  },[])
   return (
     <div className='cart-container'>
         <div className='cart'>
