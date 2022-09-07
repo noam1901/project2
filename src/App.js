@@ -2,7 +2,7 @@ import './App.css';
 import Footer from './components/Footer/Footer';
 import HomePage from './components/HomePage/HomePage';
 import Navbar from './components/navbar/Navbar';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes} from 'react-router-dom';
 import ProductsPage from './components/ProductsPage/ProductsPage';
 import Cart from './components/Cart/Cart';
 import MyAccount from './components/MyAccount/MyAccount';
@@ -15,13 +15,21 @@ import Wishlist from './components/MyAccount/Wishlist/Wishlist';
 import Login  from './components/Login/Login';
 import Register from './components/Register/Register';
 import SingleProduct from './components/SingleProduct/SingleProduct';
-
+import { useEffect, useState } from 'react';
 
 function App() {
+  const [logged, setLogged] = useState(false)
+  useEffect(
+    ()=>{
+      const cookie = document.cookie.split('=')
+      if (cookie[1]){
+        setLogged(true)
+      }
+    },[])
   return (
     <>
     <div className="App">
-      <Navbar></Navbar>
+      <Navbar loggedin={logged}></Navbar>
       <Routes>
         <Route path='products/:id' element={<SingleProduct></SingleProduct>}/>
         <Route path='/' element={<HomePage></HomePage>} />

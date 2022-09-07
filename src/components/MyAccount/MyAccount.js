@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './MyAccount.css'
-import { Link, Outlet } from 'react-router-dom'
+import { Link, Outlet, useNavigate } from 'react-router-dom'
 const MyAccount = () => {
+  const navigate = useNavigate()
+  useEffect(()=>{
+    const cookie = document.cookie.split('=')
+    if(!cookie[1]){
+      navigate('/')
+      return
+    }
+  },[])
   return (
     <div className='my-account-container'>
         <div className='my-account-nav'>

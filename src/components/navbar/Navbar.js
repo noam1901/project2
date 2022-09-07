@@ -2,15 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './navbar.css' 
 import { Link } from 'react-router-dom';
 import Dropdown from 'react-bootstrap/Dropdown';
-function Navbar() {
-  const [loged, setLoged] = useState(false)
-  useEffect(
-    ()=>{
-      const cookie = document.cookie.split('=')
-      if (cookie[1]){
-        setLoged(true)
-      }
-    },[])
+function Navbar(props) {
   const removeCookie = ()=>{
     document.cookie = 'id=; expires=Thu, 01 Jan 1960 00:00:00 UTC;'
     window.location.href = 'http://localhost:3000'
@@ -31,7 +23,7 @@ function Navbar() {
       </Dropdown.Toggle>
 
       <Dropdown.Menu>
-        {loged?<><Dropdown.Item as={Link} to="/cart">Cart</Dropdown.Item>
+        {props.loggedin?<><Dropdown.Item as={Link} to="/cart">Cart</Dropdown.Item>
         <Dropdown.Item as={Link} to="/profile">My Account</Dropdown.Item>
         <Dropdown.Item as={Link} to="/" onClick={removeCookie}>Log Out</Dropdown.Item></>:<><Dropdown.Item as={Link} to='/login'>Login</Dropdown.Item><Dropdown.Item as={Link} to='/register'>Register</Dropdown.Item></>}
       </Dropdown.Menu>
