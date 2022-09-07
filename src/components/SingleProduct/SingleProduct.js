@@ -28,7 +28,7 @@ function SingleProduct(){
           <h5>Product description</h5>
           <div className="price-rating">
             <div>123.9$</div>
-            <div>4 rating</div>
+            <div>4 ⭐</div>
           </div>
           <div className="btns-group">
             <button>Add to cart</button>
@@ -36,8 +36,7 @@ function SingleProduct(){
             <button>Add to wishlist</button>
           </div>
         </div>
-        <div className="reviews-container">
-          
+        <div className="reviews-container">     
           <div className="reviews-cards">
             <h3>reviews:</h3>
               <ReviewCard></ReviewCard>

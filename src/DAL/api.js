@@ -38,4 +38,18 @@ export default class Api {
         const data = await response.json()
         return data
     }
+    static async getAllProductsOnePhoto(){
+        const response = await fetch('http://localhost:3001/api/products',{
+            method: 'GET'
+        })
+        const data = await response.json()
+        return data
+    }
+    static async getTopProductsOnePhoto(){
+        const response = await fetch('http://localhost:3001/api/products/top',{
+            method: 'GET'
+        })
+        const data = await response.json()
+        return data
+    }
 }

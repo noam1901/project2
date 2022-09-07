@@ -1,7 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import Api from '../../DAL/api.js'
 import ProductCard from '../ProductCard/ProductCard.js'
 import './ProductsPage.css'
 const ProductsPage = () => {
+  const [products, setProducts] = useState([])
+  useEffect(()=>{
+    async function getData(){
+      const response = await Api.getAllProductsOnePhoto()
+      setProducts(response)
+    }
+    getData()
+  },[])
+  console.log(products);
   return (
     <div className='products-page'>
     <div className='sortbar'>
@@ -29,18 +39,15 @@ const ProductsPage = () => {
       </div>
     </div>
     <div className='cards'>
-      <ProductCard></ProductCard>
-      <ProductCard></ProductCard>
-      <ProductCard></ProductCard>
-      <ProductCard></ProductCard>
-      <ProductCard></ProductCard>
-      <ProductCard></ProductCard>
-      <ProductCard></ProductCard>
-      <ProductCard></ProductCard>
-      <ProductCard></ProductCard>
-      <ProductCard></ProductCard>
-      <ProductCard></ProductCard>
-      <ProductCard></ProductCard>
+      {products.map((product)=><ProductCard key={product.productid} 
+      id={product.productid} 
+      description={product.Description} 
+      instock={product.UnitInStock} 
+      discount={product.discount}
+      img={product.imgurl}
+      name={product.productname}
+      rating={product.rating}
+      price={product.unitprice}></ProductCard>)}
     </div>
   </div>
   )
