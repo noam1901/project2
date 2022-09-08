@@ -1,10 +1,10 @@
 .home-page {
     text-align: center;
   }
-  .cards {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    flex-grow: 1;
-    
-  }
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-grow: 1;
+  
+}
