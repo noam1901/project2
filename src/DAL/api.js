@@ -70,4 +70,30 @@ export default class Api {
         const data = await response.json()
         return data
     }
+    static async removeFromCart(values){
+        const response = await fetch(`http://localhost:3001/api/cartdetails`,{
+            method: 'DELETE',
+            headers: {'Content-Type': 'application/json'},
+            credentials: 'include',
+            body: JSON.stringify({
+                cartid: values.cartid,
+                productid: values.productid
+            }) 
+        })
+        const data = await response.json()
+        return data
+    }
+    static async clearCart(cartid){
+        console.log(cartid);
+        const response = await fetch(`http://localhost:3001/api/cartdetails/all`,{
+            method: 'DELETE',
+            headers: {'Content-Type': 'application/json'},
+            credentials: 'include',
+            body: JSON.stringify({
+                cartid: cartid
+            }) 
+        })
+        const data = await response.json()
+        return data
+    }
 }
