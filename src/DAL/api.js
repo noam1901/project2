@@ -52,4 +52,17 @@ export default class Api {
         const data = await response.json()
         return data
     }
+    static async AddToCart(values){
+        console.log(values);
+        const response = await fetch('http://localhost:3001/api/cart',{
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                ...values
+            })
+        })
+        console.log(response);
+        const data = await response.json()
+        return data
+    }
 }
