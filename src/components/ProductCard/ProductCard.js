@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import Api from '../../DAL/api'
 import './ProductCard.css'
 function ProductCard(props) {
+  const amount = useRef(1)
   async function addToCartButton(){
     const cookie = document.cookie.split('=')
     if(cookie[1]){
-      const response = await Api.AddToCart({userid: +cookie[1],productid: props.id,unitprice: props.price, amount: 1 })
+      const response = await Api.AddToCart({userid: +cookie[1],productid: props.id,unitprice: props.price, amount: amount.current.value })
     }else{
       alert('must sign in to add to cart')
     }
@@ -22,7 +23,8 @@ function ProductCard(props) {
           <Link to={`${props.id}`} className="product-card-title">{props.name}</Link>
         </div>
       <div className='product-card-price'>
-        <h4>{props.price}$</h4>
+        <h4>${props.price}</h4>
+        <input type='number' className='count-items' defaultValue='1' ref={amount}></input>
         <h4>{+props.rating}⭐</h4>
       </div>
       <div className='buttons'>

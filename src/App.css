@@ -28,3 +28,12 @@
   background-color: white;
   color: blue;
 }
+.count-items {
+  width: 20%;
+  height: 2rem;
+  border: none;
+  font-size: larger;
+  font-weight: 800;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px 2px;
+}

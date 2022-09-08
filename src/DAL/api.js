@@ -53,7 +53,6 @@ export default class Api {
         return data
     }
     static async AddToCart(values){
-        console.log(values);
         const response = await fetch('http://localhost:3001/api/cart',{
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
@@ -61,7 +60,13 @@ export default class Api {
                 ...values
             })
         })
-        console.log(response);
+        const data = await response.json()
+        return data
+    }
+    static async getProductsCart(userid){
+        const response = await fetch(`http://localhost:3001/api/cart/${userid}`,{
+            method: 'GET'
+        })
         const data = await response.json()
         return data
     }
