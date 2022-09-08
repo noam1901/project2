@@ -1,7 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Api from '../../DAL/api'
 import './ProductCard.css'
 function ProductCard(props) {
+  async function addToCartButton(){
+    const cookie = document.cookie.split('=')
+    if(cookie[1]){
+      const response = await Api.AddToCart({userid: +cookie[1],productid: props.id,unitprice: props.price, amount: 1 })
+    }else{
+      alert('must sign in to add to cart')
+    }
+  }
   return (
     <div className='product-card'>
         <div> 
@@ -18,7 +27,7 @@ function ProductCard(props) {
       </div>
       <div className='buttons'>
         {props.instock !== 0?<>
-        <button> Add To Cart</button></>:<button disabled> Out of stock</button>}
+        <button className='add-to-cart-button' onClick={addToCartButton}> Add To Cart</button></>:<button disabled> Out of stock</button>}
         <button className='wishlist-button'> Add To Wishlist</button>
       </div>
     </div>

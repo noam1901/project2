@@ -17,3 +17,14 @@
   background-color: white;
   color: red;
 }
+.add-to-cart-button {
+  background-color: blue;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.add-to-cart-button:hover {
+  background-color: white;
+  color: blue;
+}
