@@ -11,7 +11,6 @@ const ProductsPage = () => {
     }
     getData()
   },[])
-  console.log(products);
   return (
     <div className='products-page'>
     <div className='sortbar'>

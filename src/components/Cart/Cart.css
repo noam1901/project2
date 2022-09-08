@@ -29,3 +29,16 @@
      background-color: gray;
      color: black;
  }
+ .remove-from-cart {
+    background-color: red;
+
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 10px;
+   
+}
+.remove-from-cart:hover {
+ background-color: white;
+    color: red;
+}

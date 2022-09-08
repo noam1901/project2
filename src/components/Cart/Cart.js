@@ -12,7 +12,6 @@ const Cart = () => {
         setCart(response)
       }
   useEffect(()=>{
-    
     if(!cookie[1]){
       navigate('/')
       return
@@ -34,6 +33,10 @@ const Cart = () => {
     }
     return totalPrice
   }
+  async function clearAllCart(cartid){
+    await Api.clearCart(cartid)
+    getData()
+  }
   return (
     <div className='cart-container'>
         <div className='cart'>
@@ -45,12 +48,15 @@ const Cart = () => {
           rating={item.rating}
           price={item.unitprice}
           amount={item.amount}
-          onchange={getData}></CartCard>)}
+          onchange={getData}
+          unitinstock={item.UnitInStock}
+          cartid={item.cartid}>
+          </CartCard>)}
           <div className='summary'>
             <div>Total Products: {totalProducts()}</div>
             <div>Total Price: ${totalPrice()}</div>
           </div>
-          <button>Clear Cart</button>
+          <button onClick={()=>clearAllCart(cart[0].cartid)} className="remove-from-cart">Clear Cart</button>
           
           <div className='checkout'>
             <div className='checkout-button'>Checkout</div>
