@@ -1,6 +1,6 @@
 .review-card{
-    border: black solid 2px;
     width: 40vh;
+    padding: 1rem;
 }
 @media(max-width:375px){
     .review-card {

@@ -5,6 +5,7 @@
  .cart {
      width: 100vh;
      padding: 1rem;
+     box-shadow: 1px 4px 7px 1px;
  }
  
  
@@ -13,6 +14,7 @@
      justify-content: space-between;
      font-size: large;
      font-weight: 700;
+     border-top: 2px solid black;
  }
  .checkout {
      float: right;

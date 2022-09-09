@@ -52,6 +52,20 @@ export default class Api {
         const data = await response.json()
         return data
     }
+    static async getProductById(prodid){
+        const response = await fetch(`http://localhost:3001/api/products/${prodid}`,{
+            method: 'GET'
+        })
+        const data = await response.json()
+        return data
+    }
+    static async getRatingById(prodid){
+        const response = await fetch(`http://localhost:3001/api/ratings/${prodid}`,{
+            method: 'GET'
+        })
+        const data = await response.json()
+        return data
+    }
     static async AddToCart(values){
         const response = await fetch('http://localhost:3001/api/cart',{
             method: 'POST',

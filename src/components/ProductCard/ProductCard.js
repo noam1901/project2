@@ -11,6 +11,7 @@ function ProductCard(props) {
     }else{
       alert('must sign in to add to cart')
     }
+    
   }
   return (
     <div className='product-card'>
@@ -20,7 +21,7 @@ function ProductCard(props) {
           </Link>
         </div>
         <div className='product-card-title-container'>
-          <Link to={`${props.id}`} className="product-card-title">{props.name}</Link>
+          <Link to={`/product/${props.id}`} className="product-card-title">{props.name}</Link>
         </div>
       <div className='product-card-price'>
         <h4>${props.price}</h4>

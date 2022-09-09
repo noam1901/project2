@@ -1,11 +1,11 @@
 import React from 'react'
 import './ReviewCard.css'
-const ReviewCard = () => {
+const ReviewCard = (props) => {
   return (
     <div className="review-card">
-        <h2>User</h2>
-        <div>content</div>
-        <div>stars</div>
+        <h2>{props.review}</h2>
+        <div>by: {props.fullname}</div>
+        <div>{props.rating} ⭐</div>
     </div>
   )
 }
