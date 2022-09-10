@@ -5,7 +5,7 @@
     flex-direction: column;
     align-items: center;
 }
-.update-name-card {
+/* .update-name-card {
     max-width: 60vh;
     display: flex;
 
@@ -19,4 +19,4 @@
 }
 .update-name-card div h2 {
     width: 60%;
-}
+} */

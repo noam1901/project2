@@ -8,6 +8,7 @@
     display: flex;
     justify-content: space-between;
     font-size: larger;
+    border-top: 2px black dashed;
 }
 .products-list {
     padding: 1.5rem;

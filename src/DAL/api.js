@@ -37,6 +37,13 @@ export default class Api {
         const data = await response.json()
         return data
     }
+    static async getUserDetails(id){
+        const response = await fetch(`http://localhost:3001/api/users/${id}`,{
+            method: 'GET',
+        })
+        const data = await response.json()
+        return data
+    }
     static async getAllProductsOnePhoto(){
         const response = await fetch('http://localhost:3001/api/products',{
             method: 'GET'
@@ -83,6 +90,13 @@ export default class Api {
         const data = await response.json()
         return data
     }
+    static async getOrdersByUserId(userid){
+        const response = await fetch(`http://localhost:3001/api/orders/${userid}`,{
+            method: 'GET'
+        })
+        const data = await response.json()
+        return data
+    }
     static async removeFromCart(values){
         const response = await fetch(`http://localhost:3001/api/cartdetails`,{
             method: 'DELETE',
@@ -97,7 +111,6 @@ export default class Api {
         return data
     }
     static async clearCart(cartid){
-        console.log(cartid);
         const response = await fetch(`http://localhost:3001/api/cartdetails/all`,{
             method: 'DELETE',
             headers: {'Content-Type': 'application/json'},
@@ -110,7 +123,6 @@ export default class Api {
         return data
     }
     static async makeOrder(values){
-        console.log(values);
         const response = await fetch('http://localhost:3001/api/orders',{
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
@@ -121,6 +133,20 @@ export default class Api {
                 country: values.country,
                 city: values.city,
                 postalCode: values.postalCode
+            })
+        })
+        const data = await response.json()
+        return data
+    }
+    static async updateName(values){
+        console.log(values);
+        const cookie = document.cookie.split('=')
+        const response = await fetch(`http://localhost:3001/api/users/updatename/${cookie[1]}`,{
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                firstName: values.firstName,
+                lastName: values.lastName
             })
         })
         const data = await response.json()
