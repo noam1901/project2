@@ -19,7 +19,7 @@ function Navbar(props) {
         <div className='left-nav'>
         <Dropdown>
       <Dropdown.Toggle variant="dark" id="dropdown-basic">
-        
+        <img src='imgs/dropdown.png'></img>
       </Dropdown.Toggle>
 
       <Dropdown.Menu>

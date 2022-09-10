@@ -15,6 +15,7 @@ function HomePage() {
     <div className='home-page'>
         <div className='title'>
           <h1>Welcome ! </h1>
+          <img src='imgs/homepage.png'  className='homepage-img'></img>
           <h3>explore !!</h3>
         </div>
         <div className='top-rating'>
