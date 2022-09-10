@@ -53,7 +53,10 @@ function Form(props){
           }
           if(isValid){
             const res = await props.req(values)
-            if(res){
+            if(res.message){
+              alert(res.message)
+            }
+            else if(res){
               window.location.href = 'http://localhost:3000/'
             }else {
               alert(props.error)
