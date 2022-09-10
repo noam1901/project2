@@ -110,4 +110,21 @@ export default class Api {
         const data = await response.json()
         return data
     }
+    static async makeOrder(values){
+        console.log(values);
+        const response = await fetch('http://localhost:3001/api/orders',{
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                cartid : values.cartid,
+                userid: values.userid,
+                address: values.address,
+                country: values.country,
+                city: values.city,
+                postalCode: values.postalCode
+            })
+        })
+        const data = await response.json()
+        return data
+    }
 }
