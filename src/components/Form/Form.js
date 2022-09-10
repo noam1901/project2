@@ -2,7 +2,6 @@ import { useState } from "react";
 import Input from "./Input/Input";
 import './Form.css'
 function Form(props){
-  console.log(props);
     const [formInputs, setFormInputs] = useState(props.formInputs)
     const validate = (name, value)=>{
         formInputs[name].errors = []
@@ -33,7 +32,7 @@ function Form(props){
         e.preventDefault()
         let isValid = true
         for(let input in formInputs){
-            if(formInputs[input].errors.length > 0 || formInputs[input].value === ''){
+            if(formInputs[input].errors.length > 0 || (formInputs[input].value === '' && !props.canBeEmpty)){
                 isValid = false
                 validate(formInputs[input].name, formInputs[input].value)
             }
@@ -57,7 +56,7 @@ function Form(props){
               alert(res.message)
             }
             else if(res){
-              window.location.href = 'http://localhost:3000/'
+              window.location.href = 'http://localhost:3000'+__dirname
             }else {
               alert(props.error)
             }

@@ -4,7 +4,7 @@ import Api from '../../DAL/api'
 import './Cart.css'
 import CartCard from './CartCard/CartCard'
 import Form from '../Form/Form'
-import {FaMailBulk, FaPaperclip} from 'react-icons/fa'
+import {FaCity, FaGlobe, FaMapMarkerAlt, FaCodeBranch } from 'react-icons/fa'
 const Cart = () => {
   const navigate = useNavigate()
   const formInputs = {
@@ -19,7 +19,7 @@ const Cart = () => {
             required: true
         },
         errors: [],
-        icon: FaMailBulk,
+        icon: FaGlobe,
     },
     city: {
         id: 2,
@@ -32,7 +32,7 @@ const Cart = () => {
             required: true
         },
         errors: [],
-        icon: FaPaperclip,
+        icon: FaCity,
     },
     address: {
         id: 3,
@@ -45,7 +45,7 @@ const Cart = () => {
             required: true
         },
         errors: [],
-        icon: FaPaperclip,
+        icon: FaMapMarkerAlt,
     },
     postalCode: {
         id: 4,
@@ -56,7 +56,7 @@ const Cart = () => {
         type: 'text',
         validations: {},
         errors: [],
-        icon: FaPaperclip,
+        icon: FaCodeBranch,
     }
 }
   const [cart, setCart] = useState([])

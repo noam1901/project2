@@ -25,7 +25,7 @@ function ProductCard(props) {
         </div>
       <div className='product-card-price'>
         <h4>${props.price}</h4>
-        <input type='number' className='count-items' defaultValue='1' ref={amount}></input>
+        <input type='number' className='count-items' defaultValue='1' min='1' max={props.instock} ref={amount}></input>
         <h4>{+props.rating}⭐</h4>
       </div>
       <div className='buttons'>
