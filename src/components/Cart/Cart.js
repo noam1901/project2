@@ -3,8 +3,62 @@ import { useNavigate } from 'react-router-dom'
 import Api from '../../DAL/api'
 import './Cart.css'
 import CartCard from './CartCard/CartCard'
+import Form from '../Form/Form'
+import {FaMailBulk, FaPaperclip} from 'react-icons/fa'
 const Cart = () => {
   const navigate = useNavigate()
+  const formInputs = {
+    country: {
+        id: 1,
+        name: 'country',
+        label: 'Country',
+        placeholder: 'Please enter your country',
+        value: '',
+        type: 'text',
+        validations: {
+            required: true
+        },
+        errors: [],
+        icon: FaMailBulk,
+    },
+    city: {
+        id: 2,
+        name: 'city',
+        label: 'City',
+        placeholder: "Please enter your city",
+        value: '',
+        type: 'text',
+        validations: {
+            required: true
+        },
+        errors: [],
+        icon: FaPaperclip,
+    },
+    address: {
+        id: 3,
+        name: 'address',
+        label: 'Address',
+        placeholder: "Please enter your address",
+        value: '',
+        type: 'text',
+        validations: {
+            required: true
+        },
+        errors: [],
+        icon: FaPaperclip,
+    },
+    postalCode: {
+        id: 4,
+        name: 'postalCode',
+        label: 'Postal Code',
+        placeholder: "Please enter your postalCode",
+        value: '',
+        type: 'text',
+        validations: {},
+        errors: [],
+        icon: FaPaperclip,
+    }
+}
   const [cart, setCart] = useState([])
   const cookie = document.cookie.split('=')
   async function getData(){
@@ -37,6 +91,13 @@ const Cart = () => {
     await Api.clearCart(cartid)
     getData()
   }
+  function getCartId(){
+    if(cart.length === 0){
+      return 'noItems'
+    }else{
+      return cart[0].cartid
+    }
+  }
   return (
     <div className='cart-container'>
         <div className='cart'>
@@ -59,7 +120,8 @@ const Cart = () => {
           <button onClick={()=>clearAllCart(cart[0].cartid)} className="remove-from-cart">Clear Cart</button>
           
           <div className='checkout'>
-            <div className='checkout-button'>Checkout</div>
+          <Form formInputs={formInputs} title="Checkout" onSubmit="Checkout" req={Api.makeOrder} error="something went wrong" cartid={getCartId()} userid={cookie[1]}></Form>
+            {/* <div className='checkout-button'>Checkout</div> */}
           </div>
         </div>   
       </div>

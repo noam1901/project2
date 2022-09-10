@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Input from "./Input/Input";
+import './Form.css'
 function Form(props){
+  console.log(props);
     const [formInputs, setFormInputs] = useState(props.formInputs)
     const validate = (name, value)=>{
         formInputs[name].errors = []
@@ -41,12 +43,24 @@ function Form(props){
           for(let val in formInputs){
             values[formInputs[val].name] = formInputs[val].value
           }
-          const res = await props.req(values)
-          if(res){
-            window.location.href = 'http://localhost:3000/'
-          }else {
-            alert(props.error)
+          if(props.cartid === "noItems"){
+            alert('no items')
+            isValid = false
           }
+          else if(props.userid){
+            values['cartid'] = props.cartid
+            values['userid'] = props.userid
+          }
+          if(isValid){
+            const res = await props.req(values)
+            if(res){
+              window.location.href = 'http://localhost:3000/'
+            }else {
+              alert(props.error)
+            }
+          }
+          
+          
         }
       }
     return(
@@ -59,7 +73,7 @@ function Form(props){
             />)}
             
         
-        <button type="submit" onClick={sumbitButton}>{props.onSubmit}</button>
+        <button type="submit" onClick={sumbitButton} className="form-button">{props.onSubmit}</button>
         </form>
     )
 }
