@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import {Carousel , Form, Button, Card} from 'react-bootstrap'
 import {FaStar} from 'react-icons/fa'
-import {useParams} from 'react-router-dom'
+import {useNavigate, useParams} from 'react-router-dom'
 import Api from "../../DAL/api";
 import Gallery from "./Gallery/Gallery";
 import ReviewCard from "./ReviewCard/ReviewCard";
@@ -12,6 +12,7 @@ function SingleProduct(){
   const [ratings, setRatings] = useState([])
   const prodId = useParams()
   const amount = useRef(1)
+  const navigate = useNavigate()
   async function addToCartButton(){
     const cookie = document.cookie.split('=')
     if(cookie[1]){
@@ -34,7 +35,7 @@ function SingleProduct(){
   async function buyNowButton(){
     const addToCart = await addToCartButton()
     if(addToCart){
-      window.location.href = 'http://localhost:3000/cart'
+      navigate('/cart')
     }
   }
   useEffect(()=>{
@@ -46,7 +47,6 @@ function SingleProduct(){
     }
     getData()
 },[])
-console.log(product, ratings);
     return (
       <div className='single-product-container'>
         <div className="gallery-container">

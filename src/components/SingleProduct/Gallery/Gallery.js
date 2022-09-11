@@ -16,7 +16,6 @@ const Gallery = (props) => {
         }
         getData()
     },[])
-    // imgs must come as props
     function arrow(direction){
         let currentIndex = imgs.indexOf(currentImg)
         if(direction === 'left'){
