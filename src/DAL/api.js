@@ -83,6 +83,17 @@ export default class Api {
         const data = await response.json()
         return data
     }
+    static async AddToWishlist(values){
+        const response = await fetch('http://localhost:3001/api/wishlist',{
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                ...values
+            })
+        })
+        const data = await response.json()
+        return data
+    }
     static async getProductsCart(userid){
         const response = await fetch(`http://localhost:3001/api/cart/${userid}`,{
             method: 'GET'
@@ -92,6 +103,13 @@ export default class Api {
     }
     static async getOrdersByUserId(userid){
         const response = await fetch(`http://localhost:3001/api/orders/${userid}`,{
+            method: 'GET'
+        })
+        const data = await response.json()
+        return data
+    }
+    static async getWishlistByUserId(userid){
+        const response = await fetch(`http://localhost:3001/api/wishlist/${userid}`,{
             method: 'GET'
         })
         const data = await response.json()
@@ -110,6 +128,19 @@ export default class Api {
         const data = await response.json()
         return data
     }
+    static async removeFromWishlist(values){
+        const response = await fetch(`http://localhost:3001/api/wishlist`,{
+            method: 'DELETE',
+            headers: {'Content-Type': 'application/json'},
+            credentials: 'include',
+            body: JSON.stringify({
+                userid: values.userid,
+                productid: values.productid
+            }) 
+        })
+        const data = await response.json()
+        return data
+    }
     static async clearCart(cartid){
         const response = await fetch(`http://localhost:3001/api/cartdetails/all`,{
             method: 'DELETE',
@@ -117,6 +148,19 @@ export default class Api {
             credentials: 'include',
             body: JSON.stringify({
                 cartid: cartid
+            }) 
+        })
+        const data = await response.json()
+        return data
+    }
+    static async clearWishlist(userid){
+        console.log(userid);
+        const response = await fetch(`http://localhost:3001/api/wishlist/all`,{
+            method: 'DELETE',
+            headers: {'Content-Type': 'application/json'},
+            credentials: 'include',
+            body: JSON.stringify({
+                userid: userid
             }) 
         })
         const data = await response.json()

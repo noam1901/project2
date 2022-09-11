@@ -56,7 +56,8 @@ function Form(props){
               alert(res.message)
             }
             else if(res){
-              window.location.href = 'http://localhost:3000'+__dirname
+              props.onSuccess()
+              // window.location.href = 'http://localhost:3000'+__dirname
             }else {
               alert(props.error)
             }

@@ -88,7 +88,12 @@ function Register(){
     }
     return(
         <div className="login-page-container">
-        <Form formInputs={formInputs} title='sign up' onSubmit='Register' error="email already in use" req={Api.registerPost}></Form>
+        <Form formInputs={formInputs} 
+        title='sign up' 
+        onSubmit='Register' 
+        error="email already in use" 
+        req={Api.registerPost} 
+        onSuccess={()=>{window.location.href = 'http://localhost:3000/'}}></Form>
         <div>
           <br></br>
           <span>Already have a user?</span><br></br>

@@ -36,7 +36,12 @@ const Login = () => {
     }
   return (
     <div className='login-page-container'>
-        <Form formInputs={formInputs} title="Login" onSubmit="Login" req={Api.loginPost} error="email or password in valid"></Form>
+        <Form formInputs={formInputs} 
+        title="Login" 
+        onSubmit="Login" 
+        req={Api.loginPost} 
+        error="email or password in valid"
+        onSuccess={()=>{window.location.href = 'http://localhost:3000/'}}></Form>
         <div>
           <br></br>
           <span>dont have a user?</span><br></br>

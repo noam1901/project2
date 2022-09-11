@@ -9,5 +9,11 @@
   
 }
 .homepage-img {
-  width: 100%;
+  
+}
+.title {
+  background: url('/public/imgs/homepage.png') no-repeat top ;
+  background-size: cover;
+  color: white;
+  height: 50vh;
 }

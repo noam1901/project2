@@ -16,7 +16,7 @@ const ProductsPage = () => {
     <div className='sortbar'>
       <div className='sortbar-content'>
         <div className='categories'>
-          <h1>Categories:</h1>
+          <h2>Categories:</h2>
           <div className='categories-container'>
             <div><input type='checkbox'></input>Category1</div>
             <div><input type='checkbox'></input>Category1</div>
@@ -25,7 +25,7 @@ const ProductsPage = () => {
           </div>
         </div>
         <div className='prices'>
-            <h1>Prices:</h1>
+            <h2>Prices:</h2>
             <div className='prices-container'>
                 <div>Min price:<input type='number' defaultValue='0'></input></div>
                 <div>Max price:<input type='number' defaultValue='9999'></input></div>

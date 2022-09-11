@@ -23,6 +23,14 @@ function SingleProduct(){
     }
     
   }
+  async function addToWishlistButton(){
+    const cookie = document.cookie.split('=')
+    if(cookie[1]){
+      const response = await Api.AddToWishlist({userid: +cookie[1],productid: product.productid})
+    }else{
+      alert('must sign in to add to cart')
+    }
+  }
   async function buyNowButton(){
     const addToCart = await addToCartButton()
     if(addToCart){
@@ -49,7 +57,11 @@ console.log(product, ratings);
           <h5>{product.Description}</h5>
           <div className="price-rating">
             <div>${product.unitprice}</div>
-            <div><input type='number' className='count-items-product' defaultValue='1' min='1' max={product.UnitInStock} ref={amount}></input></div>
+            <div>
+              <span className='count-item-click' onClick={()=>amount.current.value==='1'?amount.current.value=amount.current.value:amount.current.value--}>-</span>
+                <input type='number' className='count-items' defaultValue='1' min='1' max={product.UnitInStock} ref={amount}></input>
+              <span className='count-item-click' onClick={()=>+amount.current.value===product.UnitInStock?amount.current.value=amount.current.value:amount.current.value++}>+</span>
+            </div>
             <div>{+product.rating} ⭐</div>
           </div>
           <div className="btns-group">
@@ -57,7 +69,7 @@ console.log(product, ratings);
         <button className='add-to-cart-button' onClick={addToCartButton}> Add To Cart</button>
         <button onClick={buyNowButton} className='buy-now-button'>Buy now</button>
         </>:<button disabled> Out of stock</button>}
-            <button className="wishlist-button">Add to wishlist</button>
+            <button className="wishlist-button" onClick={addToWishlistButton}>Add to wishlist</button>
           </div>
         </div>
         <div className="reviews-container">     
