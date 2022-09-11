@@ -5,7 +5,37 @@ import './Cart.css'
 import CartCard from './CartCard/CartCard'
 import Form from '../Form/Form'
 import {FaCity, FaGlobe, FaMapMarkerAlt, FaCodeBranch } from 'react-icons/fa'
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+
+function MyVerticallyCenteredModal(props) {
+  return (
+    <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Corngratz
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <h4>Have a nice day</h4>
+        <p>
+          Your order iis on the way
+        </p>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={props.onHide}>Close</Button>
+      </Modal.Footer>
+    </Modal>
+  );
+}
+
 const Cart = () => {
+  const [modalShow, setModalShow] = React.useState(false);
   const navigate = useNavigate()
   const formInputs = {
     country: {
@@ -101,7 +131,7 @@ const Cart = () => {
   return (
     <div className='cart-container'>
         <div className='cart'>
-          {cart.map(item=><CartCard key={item.productid}
+          {cart.length===0?<h1>No Items in Cart</h1>:cart.map(item=><CartCard key={item.productid}
           prodid={item.productid}
           discount={item.discount}
           img={item.imgurl}
@@ -120,10 +150,19 @@ const Cart = () => {
           <button onClick={()=>clearAllCart(cart[0].cartid)} className="remove-from-cart">Clear Cart</button>
           
           <div className='checkout'>
-          <Form formInputs={formInputs} title="Checkout" onSubmit="Checkout" req={Api.makeOrder} error="something went wrong" cartid={getCartId()} userid={cookie[1]}></Form>
-            {/* <div className='checkout-button'>Checkout</div> */}
+          <Form formInputs={formInputs} title="Checkout" 
+          onSubmit="Checkout"
+           req={Api.makeOrder} 
+           error="something went wrong" 
+           cartid={getCartId()} 
+           userid={cookie[1]}
+           onSuccess={()=>{setModalShow(true)}}></Form>
           </div>
         </div>   
+        <MyVerticallyCenteredModal
+        show={modalShow}
+        onHide={() => window.location.href='http://localhost:3000/'}
+      />
       </div>
   )
 }

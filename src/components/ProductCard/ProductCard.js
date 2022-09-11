@@ -13,6 +13,15 @@ function ProductCard(props) {
     }
     
   }
+  async function addToWishlistButton(){
+    const cookie = document.cookie.split('=')
+    if(cookie[1]){
+      const response = await Api.AddToWishlist({userid: +cookie[1],productid: props.id})
+    }else{
+      alert('must sign in to add to cart')
+    }
+    
+  }
   return (
     <div className='product-card'>
         <div> 
@@ -25,13 +34,17 @@ function ProductCard(props) {
         </div>
       <div className='product-card-price'>
         <h4>${props.price}</h4>
-        <input type='number' className='count-items' defaultValue='1' min='1' max={props.instock} ref={amount}></input>
+        <div>
+          <span className='count-item-click' onClick={()=>amount.current.value==='1'?amount.current.value=amount.current.value:amount.current.value--}>-</span>
+            <input type='number' className='count-items' defaultValue='1' min='1' max={props.instock} ref={amount}></input>
+          <span className='count-item-click' onClick={()=>+amount.current.value===props.instock?amount.current.value=amount.current.value:amount.current.value++}>+</span>
+        </div>
         <h4>{+props.rating}⭐</h4>
       </div>
       <div className='buttons'>
         {props.instock !== 0?<>
         <button className='add-to-cart-button' onClick={addToCartButton}> Add To Cart</button></>:<button disabled> Out of stock</button>}
-        <button className='wishlist-button'> Add To Wishlist</button>
+        <button className='wishlist-button' onClick={addToWishlistButton}> Add To Wishlist</button>
       </div>
     </div>
   )

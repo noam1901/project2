@@ -5,11 +5,8 @@
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
-.sortbar-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
+
+
 .categories {
     display: flex;
 }
@@ -51,4 +48,15 @@
 .sort-button div:hover {
     background-color: white;
     color: black;
+}
+.products-page{
+    display: flex;
+}
+@media(max-width: 901px){
+    .sortbar-content {
+        display: flex;
+    }
+    .products-page {
+        flex-direction: column;
+    }
 }

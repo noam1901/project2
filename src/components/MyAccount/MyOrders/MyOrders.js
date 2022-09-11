@@ -16,7 +16,7 @@ const MyOrders = () => {
   return (
     <div className='orders-container'> 
         <h1>My Orders</h1>   
-        {orders.map(order=><OrderCard key={order.orderId}
+        {orders.length===0?<h1>No Orders Made</h1>:orders.map(order=><OrderCard key={order.orderId}
         address={order.ShipAddress}
         items={order.items}
         date={order.orderDate}
