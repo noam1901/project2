@@ -3,13 +3,6 @@ import Api from '../../../../DAL/api'
 import './WishlistCard.css'
 
 const WishlistCard = (props) => {
-  // key={item.productid}
-  //       instock={item.UnitInStock}
-  //       discount={item.discount}
-  //       img={item.imgurl}
-  //       name={item.productname}
-  //       rating={item.rating}
-  //       price={item.unitprice}
   const cookie = document.cookie.split('=')
   async function addToCartButton(){
     if(cookie[1]){

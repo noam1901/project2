@@ -11,7 +11,6 @@ const MyDetails = () => {
     }
     getData()
   },[])
-  console.log(details);
   return (
     <div className='my-details-container'>
         <h1>My Details</h1>

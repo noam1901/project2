@@ -154,7 +154,6 @@ export default class Api {
         return data
     }
     static async clearWishlist(userid){
-        console.log(userid);
         const response = await fetch(`http://localhost:3001/api/wishlist/all`,{
             method: 'DELETE',
             headers: {'Content-Type': 'application/json'},
@@ -183,7 +182,6 @@ export default class Api {
         return data
     }
     static async updateName(values){
-        console.log(values);
         const cookie = document.cookie.split('=')
         const response = await fetch(`http://localhost:3001/api/users/updatename/${cookie[1]}`,{
             method: 'POST',
@@ -191,6 +189,18 @@ export default class Api {
             body: JSON.stringify({
                 firstName: values.firstName,
                 lastName: values.lastName
+            })
+        })
+        const data = await response.json()
+        return data
+    }
+    static async updatePassword(body){
+        const cookie = document.cookie.split('=')
+        const response = await fetch(`http://localhost:3001/api/users/updatepassword/${cookie[1]}`,{
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                password: body.password
             })
         })
         const data = await response.json()

@@ -9,6 +9,7 @@
 
 .categories {
     display: flex;
+    flex-wrap: wrap;
 }
 .categories-container {
     padding: 0.2rem;
@@ -21,6 +22,7 @@
 }
 .prices {
     display: flex;
+    flex-wrap: wrap;
     margin: 2rem;
     text-align: center;
 }
@@ -55,6 +57,7 @@
 @media(max-width: 901px){
     .sortbar-content {
         display: flex;
+        flex-wrap: wrap;
     }
     .products-page {
         flex-direction: column;
